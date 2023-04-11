@@ -62,7 +62,8 @@ public class Week2_1 {
 		public void getEmployeeInfo() {
 			System.out.println("Name: " + firstName +" "+lastName);
 			System.out.println("BirthDate: " + dayOfBirth+"-"+monthOfBirth+"-"+yearOfBirth);
-			System.out.println("EmployeeID: " + dayOfBirth+"-"+monthOfBirth+"-"+yearOfBirth);
+			System.out.println("EmployeeID: " + employeeID+", Position: "+position);
+			System.out.println("Super Number: " + superNumber+", TFN: "+taxFileNumber);
 			
 		}
 
