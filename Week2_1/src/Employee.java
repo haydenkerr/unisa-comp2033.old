@@ -1,10 +1,9 @@
 	// extend person to employee with interface
-		public class Employee extends Person implements EmployeeInterface {
+		public class Employee extends Person implements PersonInterface {
 			protected String taxFileNumber;
 			protected String superNumber;
 			protected String employeeID;
 			protected String position;
-
 
 			// employee constructor
 			public Employee(String firstName, String lastName, int dayOfBirth, int monthOfBirth, 
@@ -23,12 +22,9 @@
 				System.out.println("BirthDate: " + dayOfBirth+"-"+monthOfBirth+"-"+yearOfBirth);
 				System.out.println("EmployeeID: " + employeeID+", Position: "+position);
 				System.out.println("Super Number: " + superNumber+", TFN: "+taxFileNumber);
-				
 			}
-			
-			
+					
 		@Override
-		
 			public void getPersonInfo() {
 				// TODO Auto-generated method stub
 				
