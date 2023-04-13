@@ -6,7 +6,7 @@
  * @author hayde
  *
  */
-// extend person to employee with interface
+// extend person to employee with interface // 
 public class Bird extends Pet implements PetInterface{
 	protected String featherColour;
 	protected boolean canFly;
@@ -60,11 +60,7 @@ public class Bird extends Pet implements PetInterface{
 		}
 
 
-@Override
-public void getPeInfo() {
-	// TODO Auto-generated method stub
-	
-}	
+
 
 
 }
