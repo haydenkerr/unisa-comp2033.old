@@ -22,7 +22,7 @@
 				System.out.println("Gender: " + gender+"\tPhone: "+phoneNumber);
 				System.out.println("Address: " + address);
 				System.out.println("Student Details");
-				System.out.println("GPA: " + gpa+"\tMajor: ");
+				System.out.println("GPA: " + gpa+"\tMajor: "+major);
 				System.out.println("Year of Graduation: " + yearOfGraduation);
 			}
 					

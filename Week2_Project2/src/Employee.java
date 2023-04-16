@@ -8,7 +8,8 @@
 			
 			// employee constructor
 			public Employee(String name, String ssn, int age, char gender, 
-					String address, String phoneNumber, String department, String jobTitle, int yearOfHire) {
+					String address, String phoneNumber, 
+					String department, String jobTitle, int yearOfHire) {
 				//
 				super(name, ssn, age, gender,address, phoneNumber);
 				this.department = department;
@@ -18,8 +19,7 @@
 
 			
 					
-		@Override
-			public void getPersonInfo() {
+		public void getEmployeeInfo() {
 				// TODO Auto-generated method stub
 				
 			}
