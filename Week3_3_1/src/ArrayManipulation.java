@@ -38,6 +38,13 @@ public class ArrayManipulation {
 	 */
 	public void printArray(int[] array) {
 		
+		int i;
+		for (i=0; i<array.length; i++) {
+			System.out.println(array[i]);
+		
+		}
+			
+		
 	}
 	
 	/**
@@ -46,6 +53,25 @@ public class ArrayManipulation {
 	 * @return		The filled array. 
 	 */
 	public int[] fillArray(int[] array) {
+		int i ;
+		for (i=0; i<array.length; i++) {
+			array[i]= i;
+		}
+		
 		return null;
 	}
+	
+	public static void main(String[] args) {
+		int[] testArray = {2,3,4,5,6};
+		
+		/*Static Methods Can’t Call Instance Methods
+		A static method can call other static methods directly. Also, an instance method can call 
+		a static method. However, a static method, including method main, can’t call an instance 
+		method without first creating an object and applying the instance method to that object.
+		*/
+		ArrayManipulation am2 = new ArrayManipulation(); //this is required due to above
+		
+		am2.printArray(testArray);
+	}
+	
 }
