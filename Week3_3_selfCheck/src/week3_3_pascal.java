@@ -23,7 +23,36 @@ write statements to create row i + 1 .
 		return sum;
 		
 		}
-	
+		public static int[] generateNextRow(int[] row) {
+			
+			int[] outputRow = new int[row.length+1];
+			
+			
+			if(row.length == 1) {
+				outputRow[0] =1;
+				outputRow[1] =1;
+				return outputRow;
+			}
+			else {
+					
+			for (int i =0; i< outputRow.length; i++ ) {
+				
+				if(i == 0) {
+					outputRow[i] = 1;
+				}
+				else if (i >0 && i < outputRow.length-1) {
+					outputRow[i] = row[i-1]+row[i];
+				}
+				else if (i == outputRow.length-1) {
+					outputRow[i] = 1;
+				}
+			}
+			
+			return outputRow;}
+			
+		
+			
+			}
 	
 //		
 //		int[][] pascal = {
@@ -34,10 +63,16 @@ write statements to create row i + 1 .
 //	 	  {1, 4, 6, 4, 1},
 //	 };
 	
+		  public static void printArray(int[] input){
+		        for(int i = 0; i < input.length; i++){
+		            System.out.print(input[i] + " || ");
+		        }
+		    }
+		
 
 	public static void main(String[] args) {
-		int [][] pascalInput = {{1}, {1, 1}, {1, 2, 1},{1, 3, 3, 1},
-				{1, 4, 6, 4, 1}}; 
+		int [][] pascalInput = {{1},{1,1},{1,2,1},{1,3,3,1},
+				{1,4,6,4,1}}; 
 //		System.out.println(pascalSum(pascalInput));
 		
 		// verify the sum of (row 3, col 0+1) is equal to  (row 4 col 1)
@@ -57,6 +92,17 @@ write statements to create row i + 1 .
 		//int testSumPos1 = pascalInput[i][0]+pascalInput[3][1];
 		
 		System.out.println(pascalInput[3][0]+ " "+pascalInput[3][1]);
+		
+		int[] a = {1,2,1};
+//		
+//		for(int z = 0; z<pascalStart.length+1; z++) {
+//			System.out.print(generateNextRow(pascalStart)[z]+" ");
+//		}
+		
+		int[] temp = generateNextRow(a);
+		printArray(temp);
+		
+		 
 		
 		
 				 
