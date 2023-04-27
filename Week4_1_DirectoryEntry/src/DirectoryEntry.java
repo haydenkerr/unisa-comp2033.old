@@ -31,9 +31,10 @@ public class DirectoryEntry {
 	
 
 	/**
+	 * @param aName 
 	 * @return the name
 	 */
-	public String getName() {
+	public String getName(String aName) {
 		return name;
 	}
 
@@ -80,7 +81,7 @@ public class DirectoryEntry {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(name, number);
+		return Objects.hash(name);
 	}
 
 
@@ -109,11 +110,15 @@ public class DirectoryEntry {
 	 @return The old number, or if a new entry, null
 	 */
 	public String addOrChangeEntry(String aName, String newNumber) {
+		String name  = this.getName(aName);
+		Integer nameIndex = theDirectory.indexOf(name);
 		
-		return "";
+		System.out.print("nameIndex: ");
+		System.out.println(nameIndex);
+		
+		
+		return nameIndex.toString();
 	}
-	
-	
 
 	/**
 	 * @param args
@@ -128,20 +133,27 @@ public class DirectoryEntry {
 		String janeName = "Jane Smith";
 		String janeNumber = "555‐549‐1234";
 		
-//		int indexJane = -1;
+		
+		
+		
+		
+		
+		System.out.println(getTheDirectory().toString());
+		
+		//		int indexJane = -1;
 		
 		// check entry above for the .equals, 
 //		as it is set as stringName only and not stringName&&stringNumber
-		int indexJane = theDirectory.indexOf(new DirectoryEntry(janeName,janeNumber)); 
+//		int indexJane = theDirectory.indexOf(new DirectoryEntry(janeName,janeNumber)); 
 		
-		
-		System.out.println("Index of Jane: "+indexJane);
-		if(indexJane == -1) {
-			System.out.println("not found");
-		}
-		else {
-			System.out.println(theDirectory.get(indexJane).toString());
-		}
+//		
+//		System.out.println("Index of Jane: "+indexJane);
+//		if(indexJane == -1) {
+//			System.out.println("not found");
+//		}
+//		else {
+//			System.out.println(theDirectory.get(indexJane).toString());
+//		}
 		
 	}
 
