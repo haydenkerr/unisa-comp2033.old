@@ -17,6 +17,10 @@ public class Week4_1_ArrayList_replace {
 		
 		aList.set(indexOld, newItem);
 		System.out.println(aList.toString());
+<<<<<<< HEAD
+=======
+		
+>>>>>>> branch 'master' of https://github.com/haydenkerr/unisa-comp2033
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
