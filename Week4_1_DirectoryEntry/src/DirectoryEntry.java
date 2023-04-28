@@ -27,14 +27,14 @@ public class DirectoryEntry {
 	 * 
 	 */
 	 
-	private static List<DirectoryEntry> theDirectory =	 new ArrayList<>();
+	private static ArrayList<DirectoryEntry> theDirectory =	 new ArrayList<>();
 	
 
 	/**
 	 * @param aName 
 	 * @return the name
 	 */
-	public String getName(String aName) {
+	public String getName() {
 		return name;
 	}
 
@@ -66,7 +66,7 @@ public class DirectoryEntry {
 	/**
 	 * @return the theDirectory
 	 */
-	public static List<DirectoryEntry> getTheDirectory() {
+	public static ArrayList<DirectoryEntry> getTheDirectory() {
 		return theDirectory;
 	}
 
@@ -74,7 +74,7 @@ public class DirectoryEntry {
 	/**
 	 * @param theDirectory the theDirectory to set
 	 */
-	public static void setTheDirectory(List<DirectoryEntry> theDirectory) {
+	public static void setTheDirectory(ArrayList<DirectoryEntry> theDirectory) {
 		DirectoryEntry.theDirectory = theDirectory;
 	}
 
@@ -104,20 +104,28 @@ public class DirectoryEntry {
 		return "DirectoryEntry [name=" + name + ", number=" + number + "]";
 	}
 
+	public int directorySearch(ArrayList<DirectoryEntry> theDirectory, String aName)
+	{
+		int index = theDirectory.indexOf(new DirectoryEntry(aName, "")); // search for the name
+		return index; // get the proper index
+	}
 	/** Add an entry to theDirectory or change an existing entry.
 	 @param aName The name of the person being added or changed
 	 @param newNumber The new number to be assigned
 	 @return The old number, or if a new entry, null
 	 */
 	public String addOrChangeEntry(String aName, String newNumber) {
-		String name  = this.getName(aName);
-		Integer nameIndex = theDirectory.indexOf(name);
-		
-		System.out.print("nameIndex: ");
-		System.out.println(nameIndex);
-		
-		
-		return nameIndex.toString();
+		int index = directorySearch(theDirectory, aName);//search for the proper index
+		if(index != -1) //if in the list
+		{
+			String toReturn = theDirectory.get(index).getNumber(); //get the number so we know what to return
+			theDirectory.set(index, new DirectoryEntry(aName, newNumber)); //replace the number
+			return toReturn; //return the old number
+		}
+		else
+			theDirectory.add(new DirectoryEntry(aName, newNumber)); //otherwise add the new entry
+		return ""; // and return null
+		   
 	}
 
 	/**
@@ -134,11 +142,9 @@ public class DirectoryEntry {
 		String janeNumber = "555‐549‐1234";
 		
 		
-		
-		
-		
-		
-		System.out.println(getTheDirectory().toString());
+		System.out.println(theDirectory.get(0).addOrChangeEntry("Phil Smith", "555‐549‐6666" ).toString()
+		);
+		System.out.println(theDirectory.toString());
 		
 		//		int indexJane = -1;
 		
