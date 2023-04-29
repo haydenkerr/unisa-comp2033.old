@@ -2,8 +2,8 @@ package week4_sll;
 
 public class SingleLinkedList {
 
-	public Node head;
-
+	Node head = null;
+	int size = 0;
 	public SingleLinkedList() {
 		this.head = null;
 	}
@@ -12,6 +12,7 @@ public class SingleLinkedList {
 		this.head = head;
 	}
 
+
 	/**
 	 * An add method. This should append the specified item to the end of the list.
 	 *
@@ -19,7 +20,22 @@ public class SingleLinkedList {
 	 * @return
 	 */
 	public boolean add(Integer item) {
-		return true;
+		if(head == null) {
+			head = new Node(item, null);
+			
+			return false;
+		}
+		else {
+			Node temp = head;
+			while(temp.next != null) {
+				temp = temp.next;
+				temp.next = new Node(item, null);
+				size++;	
+				
+			}
+			return true;
+		}
+		
 	}
 
 	/**
@@ -27,10 +43,17 @@ public class SingleLinkedList {
 	 *
 	 * @param item 		The item to insert
 	 * @param index 	The index to insert at
+	 * @throws IndexOutOfBoundsExcepion if index is out of range
 	 */
 	public void add(Integer item, int index) {
-			
-	}
+			if(index <0 || index > size) {
+				throw new IndexOutOfBoundsException(Integer.toString(index));
+			}
+			if (index ==0) {
+				add(item);
+			}
+			}
+	
 
 
 	/**
@@ -59,9 +82,14 @@ public class SingleLinkedList {
 	public boolean remove(Integer item) {
 		return false;
 	}
+/**
+ * Find the node at the specified position\
+ * change language to how the textbook is written, page 84
+ * @param index The position of the node sought
+ * @return The node at index or Null if it does not exist
+ */
 
-
-	public Integer get(int index) {
+	public Integer getNode(int index) {
 		Node ref = head;
 		for ( int i = 0 ; i < index && ref != null ; ++i ) {
 			ref = ref.next;
@@ -85,5 +113,8 @@ public class SingleLinkedList {
 
 	public boolean isEmpty() {
 		return this.head == null;
+	}
+	public static void main(String[] args) {
+		
 	}
 }
