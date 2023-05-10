@@ -1,15 +1,18 @@
 package week4_sll;
 
-public class SingleLinkedList {
+public class SingleLinkedList<E> {
 
-	Node head = null;
+	Node<E> head = null;
 	int size = 0;
+	
 	public SingleLinkedList() {
 		this.head = null;
 	}
+	// constructors
 	
 	public SingleLinkedList(Node head) {
 		this.head = head;
+		
 	}
 
 
@@ -22,7 +25,7 @@ public class SingleLinkedList {
 	public boolean add(Integer item) {
 		if(head == null) {
 			head = new Node(item, null);
-			
+			size++;
 			return false;
 		}
 		else {

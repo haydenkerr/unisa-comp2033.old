@@ -2,7 +2,7 @@ package week4_sll;
 
 import java.util.Objects;
 
-public class Node {
+public class Node<E> {
 	public Node next;
 	public Integer data;
 

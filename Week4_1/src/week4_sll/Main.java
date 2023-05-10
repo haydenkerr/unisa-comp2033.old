@@ -10,10 +10,12 @@ public class Main {
 		Node second = new Node(2, null);
 		Node first = new Node(1, second);
 
+		
+		
 		SingleLinkedList sll = new SingleLinkedList(first);
 		sll.add(3);
 		
-		System.out.println(sll.toString());
+		System.out.println(second.toString());
 	}
 
 }
